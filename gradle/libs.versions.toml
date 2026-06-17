@@ -13,8 +13,10 @@ kspVersion = "2.3.9"
 roomVersion = "2.8.4"
 navigationRuntimeKtx = "2.9.8"
 ui = "1.11.2"
+gson = "2.11.0"
 
 [libraries]
+google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
