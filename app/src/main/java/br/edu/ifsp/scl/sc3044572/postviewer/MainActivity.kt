@@ -13,6 +13,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import br.edu.ifsp.scl.sc3044572.postviewer.ui.composable.MainNavHost
+import br.edu.ifsp.scl.sc3044572.postviewer.ui.composable.MainTopAppBar
 import br.edu.ifsp.scl.sc3044572.postviewer.ui.navigation.Screen
 import br.edu.ifsp.scl.sc3044572.postviewer.ui.theme.PostViewerTheme
 
