@@ -21,7 +21,9 @@ fun MainNavHost(
         startDestination = Screen.List.route,
         modifier = modifier
     ) {
-        composable(Screen.List.route) {
+        composable(
+            route = Screen.List.route
+        ) {
             PostListScreen(
                 viewModel = postViewModel,
                 onPostClick = { postId ->
