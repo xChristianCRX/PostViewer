@@ -1,7 +1,7 @@
 # PostViewer
 
-**Aluno:** Pedro Northon Nobile  
-**Email:** nobile@ifsp.edu.br  
+**Aluno:** Christian Ricci
+**Email:** christian.ricci@aluno.ifsp.edu.br
 **Disciplina:** Desenvolvimento de Sistemas para Dispositivos Móveis
 
 ## Descrição do Aplicativo
