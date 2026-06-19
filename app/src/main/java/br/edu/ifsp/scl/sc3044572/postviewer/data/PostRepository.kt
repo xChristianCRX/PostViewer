@@ -7,12 +7,18 @@ import br.edu.ifsp.scl.sc3044572.postviewer.model.Comment
 import br.edu.ifsp.scl.sc3044572.postviewer.model.Post
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.toList
 
 class PostRepository(
     private val api: PostApi,
     private val dao: CommentDao
 ) {
-    suspend fun getPosts(): List<Post> = api.getPosts()
+    suspend fun getPosts(): List<Post> {
+        val posts = api.getPosts()
+        return posts.onEach {
+            post -> post.quantityComments =  api.getComments(post.id).size
+        }
+    }
 
     suspend fun getRemoteComments(postId: Int): List<Comment> = api.getComments(postId)
 

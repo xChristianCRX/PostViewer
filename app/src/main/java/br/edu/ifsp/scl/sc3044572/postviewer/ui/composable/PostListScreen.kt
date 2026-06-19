@@ -27,6 +27,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import br.edu.ifsp.scl.sc3044572.postviewer.PostViewModel
 
 @Composable
@@ -64,6 +65,7 @@ fun PostListScreen(
                 items(filteredPosts) { post ->
                     PostItem(
                         title = post.title,
+                        quantityComments = post.quantityComments,
                         onClick = { onPostClick(post.id) }
                     )
                 }
@@ -73,7 +75,7 @@ fun PostListScreen(
 }
 
 @Composable
-fun PostItem(title: String, onClick: () -> Unit) {
+fun PostItem(title: String, quantityComments: Int, onClick: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -84,6 +86,12 @@ fun PostItem(title: String, onClick: () -> Unit) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(
                 text = title,
+                style = MaterialTheme.typography.titleMedium,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis
+            )
+            Text(
+                text = quantityComments.toString(),
                 style = MaterialTheme.typography.titleMedium,
                 maxLines = 2,
                 overflow = TextOverflow.Ellipsis
