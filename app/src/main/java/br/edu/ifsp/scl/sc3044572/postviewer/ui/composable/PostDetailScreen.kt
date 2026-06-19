@@ -31,6 +31,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -50,7 +51,7 @@ fun PostDetailScreen(
     val comments by viewModel.postComments.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
 
-    var localCommentText by remember { mutableStateOf("") }
+    var localCommentText by rememberSaveable { mutableStateOf("") }
 
     Column(modifier = Modifier.fillMaxSize()) {
         if (isLoading && comments.isEmpty()) {
